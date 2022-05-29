@@ -34,6 +34,12 @@ git push
 
 ## Synchronise local git with remote repository
 
+Global process
+
+```
+File --> Edit file --> Stage file --> Commit file --> push to repository 
+```
+
 ```
 git pull
 ```
@@ -74,6 +80,13 @@ git forget-blob rchlinux-2017.01.01.dual.iso
 du -shc .git
 ```
 
+## Configure git with your username & email
+
+```
+git config --global user.name "Your name"
+git config --global user.email "Your email"
+```
+
 ## Let Git remember your user credentials
 
 ```
@@ -102,11 +115,61 @@ branch.main.merge=refs/heads/main
 
 ## Handle untracked files
 
+### Stage file changes
+
 ```
+git add FILENAME
+
+# or
+
 git add --all
+
+# or
+
+git add -A
+
+# or add current directory
+
+git add .
+```
+
+### Commit a file
+
+```
 git commit -m "untracked files fix"
+```
+
+### Check the git repo status
+
+```
+git status
+```
+
+### Push the changes to remote Github repository
+
+```
 git push
 ```
+
+### Restore a file / files to moment before staging
+
+Restore can also be used when you have changed a file but want to restore it to its status before changing.
+
+```
+# when already staged:
+
+git restore --staged FILENAME
+
+# then
+
+git restore .
+
+# or
+
+git restore FILENAME
+```
+
+(. for directory or filename)
 
 ## Force overwrite to local files
 
@@ -277,18 +340,6 @@ git reset --hard origin/master
 git reset --hard origin/<branch_name>
 ```
 
-## Large file problem in GIT
-
-The following error occurs `remote: error: GH001: Large files detected. You may want to try Git Large File Storage`.
-
-It turns out that GitHub only allows for 100 MB file. The problem is that you can’t simply remove the file because it is tracked inside the previous commits so you have to remove this file completely from my repo.
-
-Solution:
-
-```bash
-git filter-branch -f --tree-filter 'rm -f programming/Javascript-books/2019-07-11 JavaScript Guru Guide.pdf' HEAD --all
-```
-
 ## Viewing what changed in the repository
 
 To view the log, type:
@@ -447,38 +498,29 @@ You need to add **"username:pat@"** after **"https://"** and before **"github.co
 git clone https://username:pat@github.com/username/reponame.git 
 ```
 
-***To clone a private repository, you need to generate a PAT(Personal Access Token) on **Github** and add it to the command.***
-
-### This is how you generate a PAT(Personal Access Token) on Github:
-
-**1,** Go to **"Settings"**:
-
-[![enter image description here](:/ae276e1b529d4a819a1801b66205a384)](https://i.stack.imgur.com/3VrIs.png)
-
-**2,** Scroll down then go to **"Developer settings"**:
-
-[![enter image description here](:/282f851e81e148eeab8184eebcd50a38)](https://i.stack.imgur.com/uDsJm.png)
-
-**3,** Press **"Personal access tokens"** then press **"Generate new token"**:
-
-[![enter image description here](:/8a786d29777b473a81f91ace0ee524b8)](https://i.stack.imgur.com/QtFtT.png)
-
-**4,** Fill **"Note"** then check **"repo"**:
-
-**If **"repo"** is not checked, you cannot clone a private repository.*
-
-[![enter image description here](:/02f3cfba4dcf45228a760d1dc2110bce)](https://i.stack.imgur.com/3HshU.png)
-
-**5,** Scroll down then press **"Generate token"**:
-
-[![enter image description here](:/47d6be614b284f29b7ca8352e943e6ae)](https://i.stack.imgur.com/Nxmr0.png)
-
-**6,** Finally, a **PAT** is generated:
-
-[![enter image description here](:/8d0c72a0a5cb44a5b9099cd55777f9bc)](https://i.stack.imgur.com/9XEDY.png)
-
-This is the command with **the PAT generated above**:
+E.g.
 
 ```
 git clone https://username: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@github.com/username/reponame.git 
 ```
+
+## Ignoring files
+
+Make a '.gitignore' file in your folder. Then add all files or directories to that .gitognore file that you do not want to keep track of.
+
+Prefer to make this file before creating the files/folders that you want to ignore.
+
+### Global ignore file
+
+Use `git config --global core.excludefile [filename]` 
+
+Create this file in, for example, you dotfiles folder for using it on multiple systems.
+
+## Clear git cache
+
+Clear up the local kept cache. Especially after you created the .gitignore file and some unwanted files already get tracked.
+
+```
+git rm -r --cached .
+```
+

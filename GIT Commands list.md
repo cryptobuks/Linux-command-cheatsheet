@@ -346,6 +346,10 @@ To view the log, type:
 
 ```
 git log
+
+# of
+
+git log --oneline
 ```
 
 To view the log in list format, type:

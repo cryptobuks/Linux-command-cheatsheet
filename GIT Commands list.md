@@ -273,6 +273,15 @@ git branch -d secondBranch
 
 Meer info op: https://www.youtube.com/watch?v=HVsySz-h9r4
 
+### List available branches
+
+See all remote branch names: `git branch -r`
+
+See all local and remote branches: `git branch -a`
+
+See detailed information such as the local or remote branches in use, commit ids, and commit messages: `git branch -vv` or `git branch -vva`
+
+
 ## GIT repo herstellen of terugzetten
 
 ### Unstage

@@ -693,3 +693,45 @@ tar -tvf homedir.tar	# toon inhoud van tar bestand
 tar -xvf homedir.tar	# pak tar bestand uit op huidige locatie
 ```
 
+## Package management (Fedora)
+
+[Click here for more information](https://docs.fedoraproject.org/en-US/fedora/latest/system-administrators-guide/package-management/DNF/)
+
+Checking for updates: `dnf check-update` 
+
+Upgrade a package: `dnf upgrade [package name]`
+
+Upgrade all packaged: `dnf upgrade` (dnf upgrade installs only those updates that can be installed. If a package cannot be updated, because of dependency problems for example, it is skipped).
+
+Search a package: `dnf search [term]` or `dnf search all [term1 term2 etc.]`
+
+List packages: `dnf list [*name*]` or `dnf list all`
+
+List installed packages: `dnf list installed [*name*]`
+
+List available packages: `dnf list available [*name*]`
+
+List packaged groups: `dnf group list`
+
+Lists the repository ID, name, and number of packages it provides for each enabled repository: `dnf repolist`
+
+Lists the packages from the specified repository: `dnf repository-packages fedora list [option]`
+
+Display information about one or more packages: `dnf info [package_name…]`
+
+Install a single package and all of its non-installed dependencies: `dnf install [package_name1 package_name2] `
+
+If you know the name of the binary you want to install, but not its package name, you can give dnf install the path name: `dnf install [/usr/sbin/named]`
+
+Installing a Package Group: `dnf group install group_name`
+
+Remove package: `dnf remove [package_name…]` e.g. `dnf remove totem rhythmbox sound-juicer`
+
+Removing a Package Group: `dnf group remove group` e.g.`dnf group remove kde-desktop-environment`
+
+Display a list of all transactions, as root: `dnf history` or `dnf history list`
+
+Reverting and Repeating Transactions: `dnf history undo id` or `dnf history redo id`
+
+The configuration file for DNF and related utilities is located at `/etc/dnf/dnf.conf`. See also [here](https://docs.fedoraproject.org/en-US/fedora/latest/system-administrators-guide/package-management/DNF/#sec-Configuring_DNF_and_DNF_Repositories).
+

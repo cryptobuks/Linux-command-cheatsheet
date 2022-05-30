@@ -528,3 +528,11 @@ Clear up the local kept cache. Especially after you created the .gitignore file 
 git rm -r --cached .
 ```
 
+## Adding a third party repo to safe repositories
+
+```
+fatal: unsafe repository ('/opt/freqtrade' is owned by someone else)
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /opt/freqtrade
+```

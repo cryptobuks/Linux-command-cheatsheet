@@ -19,10 +19,10 @@ virtualenv venv
 Start environment: 
 
 ```
-cd pythonscript/venv
-source activate
+source venv/bin/activate
 ```
-Stop environment: ``deactivate``
+
+Stop environment: `deactivate`
 
 Environment packages will be installed in: ``pythonscript/venv/lib/python3.7/site-packages``
 

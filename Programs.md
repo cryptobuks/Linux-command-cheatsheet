@@ -133,7 +133,11 @@ pip install pandas-ta
 
 TA-lib
 
-See also:
+```
+pip install ta-lib
+```
+
+Or see also:
 
 * https://pypi.org/project/TA-Lib/
 * https://mrjbq7.github.io/ta-lib/install.html

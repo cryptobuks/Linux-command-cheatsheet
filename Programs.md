@@ -152,6 +152,11 @@ $ sudo make install
 ```
     If you build TA-Lib using make -jX it will fail but that's OK! Simply rerun make -jX followed by [sudo] make install.
 
+MPL Finance
+
+```
+pip install mplfinance
+```
 
 ## Other installations
 

@@ -35,5 +35,94 @@ Download .deb or .rpm from following site:
 
 [https://www.dropbox.com/install](https://www.dropbox.com/install)
 
+### Jupyter notebooks
+
+More information is available on [https://fedoramagazine.org/jupyter-and-data-science-in-fedora/](https://fedoramagazine.org/jupyter-and-data-science-in-fedora/)
+
+Install essential Jupyter packages with: 
+
+```
+sudo dnf install python3-notebook mathjax sscg
+```
+
+Install additional datascience packages with: 
+
+```
+sudo dnf install python3-seaborn python3-lxml python3-basemap python3-scikit-image python3-scikit-learn python3-sympy python3-dask+dataframe python3-nltk
+```
+
+Optional, set a password to log into the notebook interface:
+
+```
+$ mkdir -p $HOME/.jupyter
+$ jupyter notebook password
+```
+
+Type a password for yourself. This will create the file $HOME/.jupyter/jupyter_notebook_config.json with your encrypted password.
+
+Next, prepare for SSLby generating a self-signed HTTPS certificate for Jupyter’s web server: 
+
+```
+$ cd $HOME/.jupyter; sscg
+```
+
+Finish configuring Jupyter by editing your $HOME/.jupyter/jupyter_notebook_config.json file. Make it look like this:
+
+```
+{
+   "NotebookApp": {
+     "password": "sha1:abf58...87b",
+     "ip": "*",
+     "allow_origin": "*",
+     "allow_remote_access": true,
+     "open_browser": false,
+     "websocket_compression_options": {},
+     "certfile": "/home/[YOURNAME]/.jupyter/service.pem",
+     "keyfile": "/home/[YOURNAME]/.jupyter/service-key.pem",
+     "notebook_dir": "/home/[YOURNAME]/Notebooks"
+   }
+} 
+```
+
+Change [YOURNAME]. The password and service... keys are the crypto files made by sscg.
+
+Create a folder for your notebook files, as configured in the notebook_dir setting above: 
+
+```
+mkdir $HOME/Notebooks
+```
+
+Now you are all set. Just run Jupyter Notebook from anywhere on your system by typing: 
+
+```
+jupyter notebook
+```
+
+Or add this line to your $HOME/.bashrc file to create a shortcut command called jn:
+
+```
+alias jn='jupyter notebook'
+```
+
+After running the command jn, access https://your-fedora-host.com:8888 from any browser on the network to see the Jupyter user interface. You’ll need to use the password you set up earlier. 
+
+Other optional tools used by data scientists are:
+
+* Numpy
+* Pandas
+* Matplotlib
+* Plotly
+* Seaborn
+* StatsModels
+* Scikit-learn
+* XGBoost
+* Imbalanced Learn
+* NLTK
+* SHAP
+* Keras
+* Tensorflow
+* 
+
+
 ## Other installations
 

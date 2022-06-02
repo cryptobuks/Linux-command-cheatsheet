@@ -29,5 +29,11 @@ yum check-update
 sudo yum install code
 ```
 
+### Dropbox
+
+Download .deb or .rpm from following site:
+
+[https://www.dropbox.com/install](https://www.dropbox.com/install)
+
 ## Other installations
 

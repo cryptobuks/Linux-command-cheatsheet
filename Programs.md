@@ -123,6 +123,31 @@ Other optional tools used by data scientists are:
 * Tensorflow
 * 
 
+## Technical analysis packages
+
+Pandas-ta
+
+```
+pip install pandas-ta
+```
+
+TA-lib
+
+See also:
+
+* https://pypi.org/project/TA-Lib/
+* https://mrjbq7.github.io/ta-lib/install.html
+
+Download [ta-lib-0.4.0-src.tar.gz](http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz) and:
+
+```
+$ untar and cd
+$ ./configure --prefix=/usr
+$ make
+$ sudo make install
+```
+    If you build TA-Lib using make -jX it will fail but that's OK! Simply rerun make -jX followed by [sudo] make install.
+
 
 ## Other installations
 

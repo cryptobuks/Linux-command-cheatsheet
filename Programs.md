@@ -158,5 +158,11 @@ MPL Finance
 pip install mplfinance
 ```
 
-## Other installations
+## YT-DLP
 
+Youtube and more downloader. See also: https://github.com/yt-dlp/yt-dlp
+
+```
+sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp
+sudo chmod a+rx /usr/local/bin/yt-dlp
+```

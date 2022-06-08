@@ -166,3 +166,17 @@ Youtube and more downloader. See also: https://github.com/yt-dlp/yt-dlp
 sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -O /usr/local/bin/yt-dlp
 sudo chmod a+rx /usr/local/bin/yt-dlp
 ```
+
+## Removing the desktop clock from the status bar (Gnome42)
+
+a.k.a. Hide top bar...
+
+* Go to https://extensions.gnome.org/extension/545/hide-top-bar/
+* Install Firefox browser extension (reload if necessary)
+* Go to the installed extension overview and click on the configuration button of the "hide top bar" extension
+* In the configuration window click "intellihide" and untoggle "Only hide panel when a window takes the space"
+* Now the top bar, with clock, is hidden from the view.
+
+Now there is another, more complicated way to only hide the clock. This will be added later...
+
+
